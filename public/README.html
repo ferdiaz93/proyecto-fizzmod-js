@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="prueba-front-end">Prueba Front End</h1>
+<h2 id="a-tener-en-cuenta">A tener en cuenta:</h2>
+<ul>
+<li>La prueba se puede hacer en JS nativo, o también se puede utilizar <a href="https://reactjs.org/">React</a>.</li>
+<li>Para escribir los estilos se puede usar CSS o SASS/SCSS/LESS.</li>
+<li>En caso de usar React está permitido el uso de las herramientas para hacer un quickstart o generar el boilerplate inicial como <a href="https://github.com/facebook/create-react-app">create-react-app</a>.</li>
+<li>Escribir un solo archivo para toda la aplicación o separarlo por módulo o componente.</li>
+<li>Preferentemente escribir el código usando la version ECMAScript 6 (ES6) o superior con sus features (const, let, arrow functions, Class, Promise, los métodos de Array.prototype, también se puede utilizar async/await de ES7, etc).</li>
+<li>Se puede usar un bundler/compilador/task runner para transpilar el código a ES5 como <a href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en">Rollup</a>, <a href="https://gulpjs.com/">Gulp</a>, <a href="https://gruntjs.com/">Grunt</a>, etc.</li>
+<li>Se pueden utilizar paquetes de NPM para simplificar las tareas.</li>
+</ul>
+<h3 id="credenciales-para-acceder-a-invision">Credenciales para acceder a invision</h3>
+<ul>
+<li>Crearse una cuenta de <em>invision</em> a traves del link que le fue enviado via mail para poder acceder a los diseños de la prueba.</li>
+<li>Utilizar la herramienta <em>inspect</em> de invision para consultar los estilos del diseño.</li>
+</ul>
+<p><em>Invision es la plataforma donde subimos los diseños de nuestros proyectos, los cuales podes inspeccionar.</em></p>
+<hr>
+<h2 id="ejercicio">Ejercicio</h2>
+<p>El ejercicio consiste en replicar el siguiente diseño, <a href="https://projects.invisionapp.com/d/main/default/#/console/13970593/290995909/inspect">link al diseño en invision</a>.</p>
+<p>Dentro de la carpeta assets se encuentran las imagenes y la fuente de iconos que se deben utilizar.</p>
+<p>La paleta de colores utilizada es la siguiente <a href="https://projects.invisionapp.com/d/main#/console/13970593/323722585/preview">Paleta de colores</a></p>
+<h4 id="recomendaciones">Recomendaciones:</h4>
+<p>Para sacar la grilla del invision ver siguiente imagen:</p>
+<p><img src="https://i.imgur.com/3nvmpXr.png" alt="SACAR GRILLA DE INVISION"></p>
+<h3 id="enunciado">Enunciado</h3>
+<p>La maqueta consiste en 3 secciones principales Header, Body y Footer.</p>
+<p>El header consiste en las siguientes secciones:</p>
+<ul>
+<li>Logo</li>
+<li>Topnav</li>
+<li>Buscador</li>
+<li>Carrito</li>
+<li>Menú/Navegador</li>
+</ul>
+<p>El body consiste en las siguientes secciones:</p>
+<ul>
+<li>Banner Slider</li>
+<li>Listado de producto con titulo y filtros</li>
+</ul>
+<p>El footer consiste solo en un bloque referencial:</p>
+<ul>
+<li>Bloque footer (solo texto y fondo)</li>
+</ul>
+<p>En donde se vea un ícono de la manito se indica que el elemento tiene “hover” por lo tanto hay que estilizarlo como indica el diseño.</p>
+<hr>
+<h3 id="header">Header</h3>
+<p><img src="https://i.imgur.com/vdBqWGJ.jpg" alt="HEADER"></p>
+<p>Las categorías del menú serán solicitadas via Ajax al siguiente endpoint: <a href="http://remote.fizzmod.com/menu.json">http://remote.fizzmod.com/menu.json</a></p>
+<p><strong>Menú de categorías</strong></p>
+<ul>
+<li>Recorrer las categorías dentro de <code>menu.categories</code> en el JSON recibido y generar un link de cada categoría usando el <code>title</code> y el <code>href</code>.</li>
+</ul>
+<p><strong>Resto del header</strong></p>
+<ul>
+<li>El resto del header es estático, por lo cual se debe completar en la maqueta.</li>
+</ul>
+<blockquote>
+<p>Ejemplo de json recibido:</p>
+</blockquote>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+  <span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"categories"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"CATEGORÍA NRO 1"</span><span class="token punctuation">,</span>
+        <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#cat1"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"CATEGORÍA NRO 2"</span><span class="token punctuation">,</span>
+        <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#cat2"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"CATEGORÍA NRO 3"</span><span class="token punctuation">,</span>
+        <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#cat3"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"CATEGORÍA NRO 4"</span><span class="token punctuation">,</span>
+        <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#cat4"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"CATEGORÍA NRO 5"</span><span class="token punctuation">,</span>
+        <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#cat5"</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="recomendaciones-1">Recomendaciones:</h4>
+<p><strong>Logo</strong></p>
+<p>Utilizar el asset <code>logo_fizzmod.svg</code>.</p>
+<p><strong>Topnav</strong></p>
+<p>Los elementos del mismo deben ser links.</p>
+<hr>
+<h3 id="body">Body</h3>
+<p>El contenido del body será solicitado via Ajax al siguiente endpoint: <a href="http://remote.fizzmod.com/body.json">http://remote.fizzmod.com/body.json</a></p>
+<p><strong>Banner Slider</strong></p>
+<ul>
+<li>Para generar el banner recorrer <code>slides</code> del JSON recibido y generar un <code>&lt;a&gt;</code> con el link indicado y dentro de la misma crear una <code>&lt;img&gt;</code> con la imagen indicada.</li>
+</ul>
+<p><strong>Listado de productos</strong></p>
+<ul>
+<li>Para generar los productos recorrer <code>products</code> del JSON y generar un producto por cada object.</li>
+<li>Por cada producto verificar si hay descuento segun el precio y generar de forma dinámica el globo con el porcentaje del descuento. Si no hay descuento no mostrar esta burbuja.</li>
+<li>El precio tachado de los productos se debe aplicar solo a aquellos que tengan diferecia de precios.</li>
+<li>Todo el elemento debe ser clickeable y debe linkear a la url referenciada en el <code>href</code> del object de producto.</li>
+</ul>
+<p><strong>Filtros de productos</strong></p>
+<ul>
+<li>Para armar los filtros se debe utilizar la propiedad del JSON <code>filters</code> que ya tiene los filtros precalculados y guardados por grupos.</li>
+<li>El título de cada agrupación de filtros debe ser su correspondiente <code>title</code>.</li>
+<li>Los filtros tienen que ser “checkbox” y tienen que verse como impone el diseño utilizando los assets.</li>
+</ul>
+<p><em><strong>OPCIONAL</strong></em></p>
+<ul>
+<li>Implementar la funcionalidad para que filtre la visibilidad de los productos según los filtros asignados. En el caso de que no haya resultados posibles, dejar en blanco.</li>
+</ul>
+<blockquote>
+<p>Ejemplo de json recibido:</p>
+</blockquote>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+  <span class="token string">"slides"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">"imgName"</span><span class="token punctuation">:</span> <span class="token string">"img_1.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#img-1"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">"imgName"</span><span class="token punctuation">:</span> <span class="token string">"img_2.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#img-2"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">"imgName"</span><span class="token punctuation">:</span> <span class="token string">"img_3.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#img-3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"products"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Producto 1"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#prod-al-natural"</span><span class="token punctuation">,</span>
+      <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token string">"imgProd.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"listPrice"</span><span class="token punctuation">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+        <span class="token string">"sellingPrice"</span><span class="token punctuation">:</span> <span class="token number">50</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"attributes"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"brand"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test Bee"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Producto 2"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#prod-en-aceite"</span><span class="token punctuation">,</span>
+      <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token string">"imgProd.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"listPrice"</span><span class="token punctuation">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+        <span class="token string">"sellingPrice"</span><span class="token punctuation">:</span> <span class="token number">50</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"attributes"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"brand"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test Bee"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+      <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Producto 3"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#prod"</span><span class="token punctuation">,</span>
+      <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token string">"imgProd.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"listPrice"</span><span class="token punctuation">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+        <span class="token string">"sellingPrice"</span><span class="token punctuation">:</span> <span class="token number">16</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"attributes"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"brand"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test Marca"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Producto 4"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#prod"</span><span class="token punctuation">,</span>
+      <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token string">"imgProd.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"listPrice"</span><span class="token punctuation">:</span> <span class="token number">42.5</span><span class="token punctuation">,</span>
+        <span class="token string">"sellingPrice"</span><span class="token punctuation">:</span> <span class="token number">42.5</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"attributes"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"brand"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Producto 5"</span><span class="token punctuation">,</span>
+      <span class="token string">"href"</span><span class="token punctuation">:</span> <span class="token string">"#prod"</span><span class="token punctuation">,</span>
+      <span class="token string">"image"</span><span class="token punctuation">:</span> <span class="token string">"imgProd.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"listPrice"</span><span class="token punctuation">:</span> <span class="token number">37</span><span class="token punctuation">,</span>
+        <span class="token string">"sellingPrice"</span><span class="token punctuation">:</span> <span class="token number">34</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"attributes"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"brand"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span>
+          <span class="token string">"value"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"filters"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Marca"</span><span class="token punctuation">,</span>
+      <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"brand"</span><span class="token punctuation">,</span>
+      <span class="token string">"values"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"test"</span><span class="token punctuation">,</span>
+        <span class="token string">"test2"</span><span class="token punctuation">,</span>
+        <span class="token string">"test3"</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Categoría"</span><span class="token punctuation">,</span>
+      <span class="token string">"field"</span><span class="token punctuation">:</span> <span class="token string">"category"</span><span class="token punctuation">,</span>
+      <span class="token string">"values"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"test"</span><span class="token punctuation">,</span>
+        <span class="token string">"test2"</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="recomendaciones-2">Recomendaciones:</h4>
+<p><strong>Banner Slider</strong></p>
+<p>El slider se puede hacer utilizando una librería si lo desea.</p>
+<hr>
+<p><em><strong>OPCIONAL GENERAL</strong></em></p>
+<ul>
+<li>Hacer el sitio responsive mobile (no hay diseño del mismo, solo lograr que se visualice correctamente).</li>
+</ul>
+</div>
+</body>
+
+</html>
