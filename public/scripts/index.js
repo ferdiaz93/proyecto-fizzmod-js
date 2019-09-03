@@ -1,5 +1,10 @@
 const divMenu = document.getElementById("menu");
+const divsImg = document.getElementsByClassName("carousel-item");
+const contCarousel = document.getElementById("contenedor-carrousel")
 
+pedirMenu(crearMenu)
+pedirImagenes(crearImagenesCarousel);
+pedirProductos(crearProductos)
 
 /**
  * 
@@ -22,4 +27,36 @@ function crearMenu(datos) {
     });
     //se agrega el fragment al div del DOM
     divMenu.appendChild(frag)
+}
+
+/**
+ * 
+ * @param {Array} datos array de objetos
+ * La funcion crea nodos de Img y sus propiedades
+ */
+function crearImagenesCarousel(datos){
+
+    for(let i = 0; i < datos.length ; i++){
+        let divEnlace = document.createElement("div");
+
+        if(i === 0){
+            divEnlace.setAttribute("class", "carousel-item active")
+        }else{
+            divEnlace.setAttribute("class", "carousel-item")            
+        }
+            let aImg = document.createElement("a");
+            aImg.setAttribute("href", datos[i].href);
+            let nodoImg = document.createElement("img");
+            nodoImg.setAttribute("class", "d-block w-100");
+            nodoImg.setAttribute("alt", datos[i].imgName);        
+            nodoImg.setAttribute("src", `./assets/images/${datos[i].imgName}`);
+            
+            aImg.appendChild(nodoImg);
+            divEnlace.appendChild(aImg);
+            contCarousel.appendChild(divEnlace);
+    }
+}
+
+function crearProductos(datos){
+    console.log(datos)
 }
