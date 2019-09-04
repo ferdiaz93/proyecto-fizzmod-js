@@ -188,9 +188,73 @@ h1{
 .contenido{
     display: grid;
     grid-template-columns: 25% 75%;
-    height: 40em;
+    height: 50em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    margin-top: 3em;
 }
 
 .productos{
     display: grid;
+    grid-gap: .7em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+
+}
+
+.contenedor-producto{
+    cursor: pointer;
+    border-radius: 16px;
+
+}
+
+.contenedor-producto:hover{
+    border-color: #1DB779;
+    box-shadow: 0 0 20px #1E1E1E;
+
+}
+
+
+.imgProduct img{
+    margin-left: 1.8em;
+    margin-bottom: 1em;
+    border-radius: 16px;
+
+
+}
+
+.imgProduct span{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    background-color: #00C4C1;
+    width: 3em;
+    height: 3em;
+    border-radius: 40px;
+    text-align: center;
+    padding-top: .6em;
+}
+
+.contenedor-producto h3, h4, h5{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.contenedor-producto h3{
+    font-size: 1.3em;
+}
+
+.contenedor-producto h5{
+    font-size: 1em;
+    color: #9B9B9B;
+    text-decoration: line-through;
+}
+
+.contenedor-producto h4{
+    color: #1DB779;
+    font-weight: bold;
 }
