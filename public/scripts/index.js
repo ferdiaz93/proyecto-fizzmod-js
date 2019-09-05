@@ -4,6 +4,7 @@ const contCarousel = document.getElementById("contenedor-carrousel");
 const divContenedor = document.getElementById("contenedor");
 const divFiltros = document.getElementById("filtros");
 const direccionActual = location.href;
+const carrito = document.getElementById("miCarrito");
 
 let pedidoBody;
 
