@@ -107,7 +107,7 @@ function crearProducto(producto) {
 
     // EN CASO DE NO TENER DESCUENTO NO SE CREA EL SPAN
     if (producto.price.listPrice !== producto.price.sellingPrice) {
-        //se guarda el porcentaje en una variable
+        //se ejecuta la funcion sacarPorcentaje y se guarda el porcentaje en una variable
         let porcentajeDif = sacarPorcentaje(producto.price.sellingPrice, producto.price.listPrice)
         //Se crea el span y se le agrega el porcentaje dentro
         let span = document.createElement("span");
@@ -256,7 +256,7 @@ divFiltros.addEventListener("click", (e) => {
  * @param {array} filtros array de strings con filtros a aplicar 
  * @param {array} arrayDeObj array de objetos a quienes aplicar los filtros
  * 
- * esta funcion boora el contenido del div contenedor 
+ * esta funcion borra el contenido del div contenedor 
  * aplica los filtros y ejecuta otra funcion con un array de objetos
  */
 function aplicarFiltros(filtros, arrayDeObj) {
