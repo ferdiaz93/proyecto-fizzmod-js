@@ -196,10 +196,11 @@ function crearFiltros(datos) {
         input.setAttribute("id", e);
         
         let label = document.createElement("label");
+        let tituloFiltro = document.createTextNode(e);
         label.setAttribute("for", e);
-        label.innerText = e;
-        
-        pContenedor.appendChild(input);
+        label.appendChild(input);
+        label.appendChild(tituloFiltro);
+
         pContenedor.appendChild(label);
         
     }) 
